@@ -14,6 +14,7 @@ public class LottoGame {
 
   public void play() {
     LottoTickets lottoTickets = createLottoTickets();
+    WinningLottoTicket winningLottoTicket = WinningLottoTicketGenerator.generate();
   }
 
   private LottoTickets createLottoTickets() {

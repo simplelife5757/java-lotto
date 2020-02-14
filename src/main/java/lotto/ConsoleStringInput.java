@@ -26,4 +26,14 @@ public class ConsoleStringInput {
     }
     return manualLottos;
   }
+
+  public static String getWinningLottoTicket() {
+    System.out.println("지난 주 당첨 번호를 입력해 주세요.");
+    return scanner.nextLine();
+  }
+
+  public static String getBonusLottoNumber() {
+    System.out.println("보너스 볼을 입력해 주세요.");
+    return scanner.nextLine();
+  }
 }
