@@ -17,7 +17,7 @@ public class LottoTicketsTest {
         LottoTicket lottoTicket = getLottoTicketFixture();
         lottoTickets.add(lottoTicket);
         // when
-        tickets.add(lottoTicket);
+        tickets.add(lottoTickets);
         // then
         assertThat(tickets.getLottoTickets()).contains(lottoTicket);
     }
