@@ -7,23 +7,37 @@ public class LottoNumber {
 
   private int lottoNumber;
 
-  private LottoNumber(int lottoNumber) {
+  private LottoNumber(String lottoNumber) {
     validate(lottoNumber);
-    this.lottoNumber = lottoNumber;
+    this.lottoNumber = parse(lottoNumber);
   }
 
-  public static LottoNumber of(int lottoNumber) {
+  public static LottoNumber of(String lottoNumber) {
     return new LottoNumber(lottoNumber);
   }
 
-  private void validate(int lottoNumber) {
-    if (isNotInRange(lottoNumber)) {
+  private void validate(String lottoNumber) {
+    if (isNotParsableToInt(lottoNumber) || isNotInRange(lottoNumber)) {
       throw new IllegalArgumentException();
     }
   }
 
-  private boolean isNotInRange(int lottoNumber) {
+  private boolean isNotParsableToInt(String money) {
+    try {
+      Integer.parseInt(money);
+    } catch (NumberFormatException e) {
+      return true;
+    }
+    return false;
+  }
+
+  private boolean isNotInRange(String StringLottoNumber) {
+    int lottoNumber = Integer.parseInt(StringLottoNumber);
     return (MINIMUM_LOTTO_NUMBER > lottoNumber) || (lottoNumber > MAXIMUM_LOTTO_NUMBER);
+  }
+
+  private int parse(String lottoNumber) {
+    return Integer.parseInt(lottoNumber);
   }
 
   public int getLottoNumber() {

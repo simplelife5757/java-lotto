@@ -10,7 +10,7 @@ public class LottoNumberTest {
   @Test
   void of_ValidInput_ValidOutput() {
     // given
-    int lottoNumber = 5;
+    String lottoNumber = "5";
     // then
     assertThat(LottoNumber.of(lottoNumber).getLottoNumber()).isEqualTo(lottoNumber);
   }
@@ -18,7 +18,7 @@ public class LottoNumberTest {
   @Test
   void of_OutOfRange_ThrowException() {
     // given
-    int outOfRangeNumber = 47;
+    String outOfRangeNumber = "47";
     // then
     assertThatThrownBy(() -> LottoNumber.of(outOfRangeNumber)).isInstanceOf(IllegalArgumentException.class);
   }
