@@ -38,6 +38,11 @@ public class LottoGameMoney {
         return Integer.parseInt(money);
     }
 
+    public int calculateAutoLottoTicketCount(int manualLottoCount) {
+        int manualLottoPrice = manualLottoCount * LOTTO_TICKET_PRICE;
+        return lottoGameMoney - manualLottoPrice;
+    }
+
     public int getLottoGameMoney() {
         return lottoGameMoney;
     }

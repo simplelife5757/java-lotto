@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ManualLottoTicketGenerator {
-    public static List<LottoTicket> generate() {
-        ManualLottoTicketCount manualLottoTicketCount = ManualLottoTicketCount.of(ConsoleStringInput.getManualLottoTicketCount());
-        int count = manualLottoTicketCount.getManualLottoTicketCount();
+    public static List<LottoTicket> generate(int count) {
         List<String> manualStringLottoTickets = ConsoleStringInput.getManualLottoTickets(count);
         return manualStringLottoTickets.stream().map(stringLottoTicket -> createLottoTicket(stringLottoTicket)).collect(Collectors.toList());
     }
